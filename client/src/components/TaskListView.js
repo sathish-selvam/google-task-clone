@@ -10,7 +10,7 @@ class TaskListView extends Component {
     return (
       <ul className="task-list-view">
         {todo.map((item) => (
-          <Todo key={item.id} list={item} captureClick={(id) => this.hanldeCaptureClick(id)} />
+          <Todo key={item._id} list={item} captureClick={(id) => this.hanldeCaptureClick(id)} />
         ))}
       </ul>
     );

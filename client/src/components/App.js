@@ -4,31 +4,32 @@ import Navigation from "./Navigation";
 import AddTask from "./AddTask";
 import TaskListView from "./TaskListView";
 import Completed from "./Completed";
+import axios from "axios";
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      todo: [
-        {
-          title: "Wake up marning",
-          isCompleted: false,
-          id: 1,
-        },
-        {
-          title: "Eat healthly food",
-          isCompleted: false,
-          id: 2,
-        },
-      ],
+      todo: [],
     };
 
     this.createNewTask = this.createNewTask.bind(this);
   }
 
+  componentDidMount() {
+    axios
+      .get("/users")
+      .then((data) => {
+        this.setState({ todo: data.data });
+      })
+      .catch((err) => {
+        console.warn(err);
+      });
+  }
+
   handleClick(id) {
     let NewState = this.state.todo.map((li) => {
-      if (li.id === id) {
+      if (li._id === id) {
         li.isCompleted = true;
         return li;
       } else return li;
@@ -39,7 +40,7 @@ class App extends Component {
 
   handleDeletedListRedo(id) {
     let NewState = this.state.todo.map((li) => {
-      if (li.id === id) {
+      if (li._id === id) {
         li.isCompleted = false;
         return li;
       } else return li;

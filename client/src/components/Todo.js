@@ -21,7 +21,7 @@ function Todo(props) {
     <>
       {!list.isCompleted && (
         <li className={listOver ? "list-item-hover" : "list-item"} onMouseOver={() => setListOver(true)} onMouseLeave={() => setListOver(false)}>
-          <i style={{ cursor: "pointer" }} onMouseOver={handleOnHover} onMouseLeave={handleOnLeave} className={hover ? "tick fas fa-check" : "far fa-circle"} onClick={() => handleClick(list.id)}></i>
+          <i style={{ cursor: "pointer" }} onMouseOver={handleOnHover} onMouseLeave={handleOnLeave} className={hover ? "tick fas fa-check" : "far fa-circle"} onClick={() => handleClick(list._id)}></i>
           <p>{list.title}</p>
           {listOver && <i className="three-dot fas fa-ellipsis-v"></i>}
         </li>

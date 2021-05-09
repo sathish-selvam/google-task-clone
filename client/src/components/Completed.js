@@ -34,7 +34,7 @@ class Completed extends Component {
         {this.state.isPanelOpen && (
           <ul>
             {completedList.map((li) => (
-              <CompletedList key={li.id} list={li} captureDelete={(id) => this.deletedList(id)} />
+              <CompletedList key={li._id} list={li} captureDelete={(id) => this.deletedList(id)} />
             ))}
           </ul>
         )}

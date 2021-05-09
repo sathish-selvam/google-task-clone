@@ -19,7 +19,7 @@ app.use(cors());
 app.use(express.json());
 
 // get the list of todos
-app.get("/", (req, res) => {
+app.get("/users", (req, res) => {
   Todo.find({}, (err, docs) => {
     if (err) next(err);
     res.json(docs);

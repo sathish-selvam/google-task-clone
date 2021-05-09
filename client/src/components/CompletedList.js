@@ -12,10 +12,10 @@ function CompletedList(props) {
 
   return (
     <ul>
-      <li key={list.id} className={hover ? "list-item-hover" : "list-item"} onMouseOver={() => setHover(true)} onMouseLeave={() => setHover(false)}>
+      <li key={list._id} className={hover ? "list-item-hover" : "list-item"} onMouseOver={() => setHover(true)} onMouseLeave={() => setHover(false)}>
         <i className="tick fas fa-check"></i>
         <del>{list.title}</del>
-        {hover && <i className="three-dot fas fa-trash-alt" onClick={(e) => handleDeleteCompleted(e, list.id)}></i>}
+        {hover && <i className="three-dot fas fa-trash-alt" onClick={(e) => handleDeleteCompleted(e, list._id)}></i>}
       </li>
     </ul>
   );
