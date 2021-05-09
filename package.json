@@ -4,7 +4,11 @@
   "description": "I have created exact version of google task clone",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "client": "npm start --prefix client",
+    "server": "nodemon index.js",
+    "dev": "concurrently \"nodemon index.js\" \"npm start --prefix client\"",
+    "client-install": "npm install --prefix client",
+    "init": "npm i && npm i --prefix client"
   },
   "author": "",
   "license": "ISC",
@@ -16,5 +20,8 @@
     "helmet": "^4.6.0",
     "mongoose": "^5.12.7",
     "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
   }
 }
