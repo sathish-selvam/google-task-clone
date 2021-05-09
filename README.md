@@ -16,7 +16,7 @@ Development utilities:
 - [nodemon](https://www.npmjs.com/package/nodemon)
   - nodemon is a tool that helps develop node.js based applications by automatically restarting the node application when file changes in the directory are detected.
 - [concurrently](https://www.npmjs.com/package/concurrently)
-  - ESLint is a tool for identifying and reporting on patterns found in ECMAScript/JavaScript code.
+  - Concurrently packaged allow us to run client and server and simultaniously.
 
 ## setup
 
